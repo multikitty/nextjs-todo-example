@@ -12,6 +12,12 @@ const Todos = () => {
     },500)
   };
 
+  const handleDeleteTodo = (id) =>{
+    const allTodos = [...todos]
+    const filteredTodo = allTodos.filter(todo => todo.id !==id)
+    setTodos(filteredTodo)
+  }
+
   return (
     <div className="bg-green-500">
       <input
@@ -23,7 +29,7 @@ const Todos = () => {
       <button onClick={handleAddTodo}>
           Add Todo
       </button>
-      <Todolist todos={todos} />
+      <Todolist todos={todos} deleteTodo={handleDeleteTodo} />
     </div>
   );
 };
