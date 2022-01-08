@@ -3,7 +3,19 @@ import React from 'react';
 const Todolist = ({todos}) => {
     return (
         <div>
-            <h3>tdakldj</h3>
+            {todos.length <0 ? (
+                <div>
+                    no any todo
+                </div>
+            ): todos.map((todo,index) => (
+                <div key={index}>
+                    <ul>
+                        <li>
+                            {todo.text}
+                        </li>
+                    </ul>
+                </div>
+            ))}
         </div>
     );
 }

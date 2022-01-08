@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Todos from '../components/Todos'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     <h1 className='text-2xl text-emerald-500'>Hwllo</h1>
+    <Todos />
     </div>
   )
 }
