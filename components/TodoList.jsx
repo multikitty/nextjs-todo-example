@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 const Todolist = ({ todos, deleteTodo }) => {
   return (
@@ -25,5 +26,10 @@ const Todolist = ({ todos, deleteTodo }) => {
     </div>
   );
 };
+
+Todolist.propTypes = {
+  todos: PropTypes.object,
+  deleteTodo:PropTypes.func
+}
 
 export default Todolist;
