@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types'
 
-const Todolist = ({ todos, deleteTodo }) => {
+const Todolist = ({ todos, deleteTodo,completeTodo }) => {
   return (
     <div>
       {todos.length < 0 ? (
@@ -18,7 +18,7 @@ const Todolist = ({ todos, deleteTodo }) => {
                 >
                   Delete
                 </button>
-                <button className="bg-purple-600" onClick={}>
+                <button className="bg-purple-600" onClick={() => completeTodo(todo.id)}>
                   done
                 </button>
               </li>

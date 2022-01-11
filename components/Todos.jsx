@@ -21,7 +21,10 @@ const Todos = () => {
   const handleCompleteTodo = (id) =>{
     const allTodos = [...todos]
     const todo = allTodos.findIndex(todo => todo.id ===id) 
-    
+    let newTodo = allTodos[todo]
+    newTodo.completed = true;
+    allTodos[todo] = newTodo;
+    setTodos(allTodos)
   }
 
   return (
@@ -35,7 +38,7 @@ const Todos = () => {
       <button onClick={handleAddTodo}>
           Add Todo
       </button>
-      <Todolist todos={todos} deleteTodo={handleDeleteTodo} />
+      <Todolist todos={todos} deleteTodo={handleDeleteTodo} completeTodo={handleCompleteTodo} />
     </div>
   );
 };
