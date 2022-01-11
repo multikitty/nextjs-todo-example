@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todolist from "./TodoList";
 import { toast, ToastContainer } from "react-toastify";
+import Input from "./Input";
 
 const Todos = () => {
   const [text, setText] = useState("");
@@ -37,14 +38,7 @@ const Todos = () => {
 
   return (
     <div className="bg-green-500">
-      <input
-        type={"text"}
-        placeholder="todo..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearAllTodo} className="pl-2 bg-rose-600">Clear all</button>
+      <Input addTodo={handleAddTodo} clearAll={handleClearAllTodo} getTerm={q => setText(q)} />
       <Todolist
         todos={todos}
         deleteTodo={handleDeleteTodo}
