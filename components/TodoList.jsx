@@ -8,7 +8,7 @@ const Todolist = ({ todos, deleteTodo }) => {
         <div>no any todo</div>
       ) : (
         todos.map((todo, index) => (
-          <div key={index}>
+          <div key={index} className={todo.completed ? 'bg-green-800' : 'bg-gray-700'} >
             <ul>
               <li>
                 {todo.text}{" "}
@@ -17,6 +17,9 @@ const Todolist = ({ todos, deleteTodo }) => {
                   onClick={() => deleteTodo(todo.id)}
                 >
                   Delete
+                </button>
+                <button className="bg-purple-600" onClick={}>
+                  done
                 </button>
               </li>
             </ul>
@@ -28,7 +31,7 @@ const Todolist = ({ todos, deleteTodo }) => {
 };
 
 Todolist.propTypes = {
-  todos: PropTypes.object,
+  todos: PropTypes.array,
   deleteTodo:PropTypes.func
 }
 
