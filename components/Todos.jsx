@@ -6,7 +6,7 @@ const Todos = () => {
   const [todos, setTodos] = useState([]);
 
   const handleAddTodo = () => {
-    setTodos([...todos, { id: Math.floor(Math.random() * 1000), text }]);
+    setTodos([...todos, { id: Math.floor(Math.random() * 1000), text,completed:false }]);
     setTimeout(() =>{
         setText('')
     },500)
@@ -16,6 +16,12 @@ const Todos = () => {
     const allTodos = [...todos]
     const filteredTodo = allTodos.filter(todo => todo.id !==id)
     setTodos(filteredTodo)
+  }
+
+  const handleCompleteTodo = (id) =>{
+    const allTodos = [...todos]
+    const todo = allTodos.findIndex(todo => todo.id ===id) 
+    
   }
 
   return (
