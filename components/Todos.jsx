@@ -5,7 +5,11 @@ import Input from "./Input";
 
 const Todos = () => {
   const [text, setText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    {id:1,text:'read book',completed:false},
+    {id:1,text:'read book',completed:false},
+    {id:1,text:'read book',completed:false},
+  ]);
 
   const handleAddTodo = () => {
     setTodos([
@@ -37,7 +41,7 @@ const Todos = () => {
   }
 
   return (
-    <div className="bg-green-500">
+    <div className="bg-green-500 max-w-xl mx-auto py-2 my-4">
       <Input addTodo={handleAddTodo} clearAll={handleClearAllTodo} getTerm={q => setText(q)} />
       <Todolist
         todos={todos}
