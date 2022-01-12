@@ -1,4 +1,4 @@
-import React,{text,setText} from "react";
+import React from "react";
 import { useState } from "react/cjs/react.development";
 
 const Input = ({addTodo,clearAll,getTerm}) => {
