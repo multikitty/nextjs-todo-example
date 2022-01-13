@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import Todolist from "./TodoList";
 import { toast, ToastContainer } from "react-toastify";
+import { v4 as uudiv4 } from "uuid";
 import Input from "./Input";
 
 const Todos = () => {
   const [text, setText] = useState("");
-  const [todos, setTodos] = useState([
-    {id:1,text:'read book',completed:false},
-    {id:1,text:'read book',completed:false},
-    {id:1,text:'read book',completed:false},
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const handleAddTodo = () => {
-    setTodos([
-      ...todos,
-      { id: Math.floor(Math.random() * 1000), text, completed: false },
-    ]);
-    setTimeout(() => {
-      setText("");
-    }, 500);
+    if (text !== "" && text !== " ") {
+      setTodos([...todos, { id: uudiv4(), text, completed: false }]);
+    }
   };
 
   const handleDeleteTodo = (id) => {
@@ -36,11 +29,9 @@ const Todos = () => {
     setTodos(allTodos);
   };
 
- 
-
   return (
     <div className="bg-stone-700  max-w-xl mx-auto py-2 my-4 drop-shadow-lg rounded-lg h-96 absolute inset-20">
-      <Input addTodo={handleAddTodo}  getTerm={q => setText(q)} />
+      <Input addTodo={handleAddTodo} getTerm={(q) => setText(q)} />
       <Todolist
         todos={todos}
         deleteTodo={handleDeleteTodo}
