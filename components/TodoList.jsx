@@ -11,8 +11,8 @@ const Todolist = ({ todos, deleteTodo,completeTodo }) => {
         todos.map((todo, index) => (
           <div key={index} className={'px-5 py-2 '} >
             <ul className="">
-              <li className="flex justify-between ">
-                {todo.text}{" "}
+              <li className="flex justify-between  ">
+                <p className="text-white capitalize ">{todo.text}{" "}</p>
                <div>
                <button
                   className=" p-2"

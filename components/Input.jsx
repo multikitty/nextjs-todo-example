@@ -11,17 +11,16 @@ const Input = ({addTodo,clearAll,getTerm}) => {
     }
 
   return (
-    <div>
+    <div className="">
       <input
         type={"text"}
         placeholder="todo..."
         value={value}
         onChange={(e) => getValue(e.target.value)}
+        className="px-2 py-1 rounded-sm focus:outline-none w-6/12"
       />
-      <button onClick={addTodo}>Add Todo</button>
-      <button onClick={clearAll} className="pl-2 bg-rose-600">
-        Clear all
-      </button>
+      <button onClick={addTodo}>Add </button>
+      
     </div>
   );
 };
