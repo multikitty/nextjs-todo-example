@@ -1,17 +1,16 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
 
-const Input = ({addTodo,clearAll,getTerm}) => {
+const Input = ({ addTodo, clearAll, getTerm }) => {
+  const [value, setValue] = useState("");
 
-    const [value, setVlalue] = useState('')
-
-    const getValue = (event)=>{
-        setVlalue(event)
-        getTerm(event)
-    }
+  const getValue = (event) => {
+    setValue(event);
+    getTerm(event);
+  };
 
   return (
-    <div className="">
+    <div className="mt-3">
       <input
         type={"text"}
         placeholder="todo..."
@@ -19,8 +18,12 @@ const Input = ({addTodo,clearAll,getTerm}) => {
         onChange={(e) => getValue(e.target.value)}
         className="px-2 py-1 rounded-sm focus:outline-none w-6/12"
       />
-      <button onClick={addTodo}>Add </button>
-      
+      <button
+        onClick={addTodo}
+        className="bg-lime-600 text-white py-1 px-3 ml-2 rounded-sm"
+      >
+        Add{" "}
+      </button>
     </div>
   );
 };

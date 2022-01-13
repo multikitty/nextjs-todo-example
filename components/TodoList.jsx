@@ -1,29 +1,28 @@
 import React from "react";
-import PropTypes from 'prop-types'
-import {FaTrash,FaCheckCircle} from 'react-icons/fa'
+import PropTypes from "prop-types";
+import { FaTrash, FaCheckCircle } from "react-icons/fa";
 
-const Todolist = ({ todos, deleteTodo,completeTodo }) => {
+const Todolist = ({ todos, deleteTodo, completeTodo }) => {
   return (
     <div>
-      {todos.length < 0 ? (
-        <div>no any todo</div>
+      {todos.length <= 0 ? (
+        <div className=" mt-24" >
+          <p className="text-white text-xl " >There is no Todo yet</p>
+        </div>
       ) : (
         todos.map((todo, index) => (
-          <div key={index} className={'px-5 py-2 '} >
+          <div key={index} className={"px-5 py-2 "}>
             <ul className="">
               <li className="flex justify-between  ">
-                <p className="text-white capitalize ">{todo.text}{" "}</p>
-               <div>
-               <button
-                  className=" p-2"
-                  onClick={() => deleteTodo(todo.id)}
-                >
-                  <FaTrash  className="text-red-700"/>
-                </button>
-                <button className="" onClick={() => completeTodo(todo.id)}>
-                  <FaCheckCircle className="text-green-700" />
-                </button>
-               </div>
+                <p className="text-white capitalize ">{todo.text} </p>
+                <div>
+                  <button className=" p-2" onClick={() => deleteTodo(todo.id)}>
+                    <FaTrash className="text-red-700" />
+                  </button>
+                  <button className="" onClick={() => completeTodo(todo.id)}>
+                    <FaCheckCircle className="text-green-700" />
+                  </button>
+                </div>
               </li>
             </ul>
           </div>
@@ -35,7 +34,7 @@ const Todolist = ({ todos, deleteTodo,completeTodo }) => {
 
 Todolist.propTypes = {
   todos: PropTypes.array,
-  deleteTodo:PropTypes.func
-}
+  deleteTodo: PropTypes.func,
+};
 
 export default Todolist;
