@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { ToastContainer } from 'react-toastify'
 import Footer from '../components/common/Footer'
 import Header from '../components/common/Header'
 import Todos from '../components/Todos'
@@ -16,6 +17,8 @@ export default function Home() {
     <Todos />
     </div>
     <Footer />
+    <ToastContainer />
+
     </div>
   )
 }

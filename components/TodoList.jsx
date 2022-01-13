@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaTrash, FaCheckCircle } from "react-icons/fa";
+import {  BsCheckCircle } from "react-icons/bs";
+import { FiTrash2} from "react-icons/fi";
 
 const Todolist = ({ todos, deleteTodo, completeTodo }) => {
   return (
@@ -23,10 +24,10 @@ const Todolist = ({ todos, deleteTodo, completeTodo }) => {
                 </p>
                 <div>
                   <button className=" p-2" onClick={() => deleteTodo(todo.id)}>
-                    <FaTrash className="text-red-700" />
+                    <FiTrash2 className="text-red-700" />
                   </button>
                   <button className="" onClick={() => completeTodo(todo.id)}>
-                    <FaCheckCircle className="text-green-700" />
+                    <BsCheckCircle className="text-green-700" />
                   </button>
                 </div>
               </li>

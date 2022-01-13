@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
+import PropTypes from "prop-types";
 
-const Input = ({ addTodo, clearAll, getTerm }) => {
+const Input = ({ addTodo, getTerm }) => {
   const [value, setValue] = useState("");
 
   const getValue = (event) => {
@@ -24,8 +25,14 @@ const Input = ({ addTodo, clearAll, getTerm }) => {
       >
         Add{" "}
       </button>
+    
     </div>
   );
 };
+
+Input.proptTypes = {
+  addTodo:PropTypes.func,
+  getTerm:PropTypes.func
+}
 
 export default Input;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Todolist from "./TodoList";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { v4 as uudiv4 } from "uuid";
 import Input from "./Input";
 
@@ -11,6 +11,12 @@ const Todos = () => {
   const handleAddTodo = () => {
     if (text !== "" && text !== " ") {
       setTodos([...todos, { id: uudiv4(), text, completed: false }]);
+      toast.success("Todo Added", {
+        position: "top-right",
+        autoClose: 3000,
+        closeOnClick: true,
+        theme: "colored",
+      });
     }
   };
 
@@ -18,6 +24,13 @@ const Todos = () => {
     const allTodos = [...todos];
     const filteredTodo = allTodos.filter((todo) => todo.id !== id);
     setTodos(filteredTodo);
+    toast.error("Todo Deleted",{
+      position:'bottom-right',
+      autoClose:3000,
+      closeOnClick:true,
+      theme:'colored',
+      icon:false
+    })
   };
 
   const handleCompleteTodo = (id) => {
@@ -27,6 +40,12 @@ const Todos = () => {
     newTodo.completed = true;
     allTodos[todo] = newTodo;
     setTodos(allTodos);
+    toast.success("Todo Completed",{
+      position:'top-right',
+      autoClose:3000,
+      theme:"colored",
+      
+    })
   };
 
   return (
@@ -37,7 +56,6 @@ const Todos = () => {
         deleteTodo={handleDeleteTodo}
         completeTodo={handleCompleteTodo}
       />
-      <ToastContainer />
     </div>
   );
 };
