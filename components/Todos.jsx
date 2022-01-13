@@ -41,7 +41,7 @@ const Todos = () => {
   }
 
   return (
-    <div className="bg-green-500 max-w-xl mx-auto py-2 my-4">
+    <div className="bg-green-500 max-w-xl mx-auto py-2 my-4 drop-shadow-lg rounded-lg h-96 absolute inset-20">
       <Input addTodo={handleAddTodo} clearAll={handleClearAllTodo} getTerm={q => setText(q)} />
       <Todolist
         todos={todos}
