@@ -16,7 +16,12 @@ export default function Home() {
     <div className='text-center mx-48 '>
     <Todos />
     </div>
+
+
     <Footer />
+
+
+    
     <ToastContainer />
     </div>
   )
